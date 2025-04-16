@@ -1,8 +1,8 @@
-package com.SpringSecurityJWT.Auth.config.security.filter;
+package com.SpringSecurityJWT.auth.config.security.filter;
 
-import com.SpringSecurityJWT.Auth.entity.User;
-import com.SpringSecurityJWT.Auth.repository.UserRepository;
-import com.SpringSecurityJWT.Auth.service.JwtService;
+import com.SpringSecurityJWT.auth.entity.User;
+import com.SpringSecurityJWT.auth.repository.UserRepository;
+import com.SpringSecurityJWT.auth.service.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

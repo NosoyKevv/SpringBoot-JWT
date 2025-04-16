@@ -1,8 +1,8 @@
-package com.SpringSecurityJWT.Auth.controller;
+package com.SpringSecurityJWT.auth.controller;
 
-import com.SpringSecurityJWT.Auth.dto.AuthenticationRequest;
-import com.SpringSecurityJWT.Auth.dto.AuthenticationResponse;
-import com.SpringSecurityJWT.Auth.service.AuthenticationService;
+import com.SpringSecurityJWT.auth.dto.AuthenticationRequest;
+import com.SpringSecurityJWT.auth.dto.AuthenticationResponse;
+import com.SpringSecurityJWT.auth.service.AuthenticationService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

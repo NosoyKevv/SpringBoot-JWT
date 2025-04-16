@@ -1,4 +1,4 @@
-package com.SpringSecurityJWT.Auth.entity;
+package com.SpringSecurityJWT.auth.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.DecimalMin;

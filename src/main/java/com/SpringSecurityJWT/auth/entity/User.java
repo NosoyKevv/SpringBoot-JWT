@@ -1,6 +1,6 @@
-package com.SpringSecurityJWT.Auth.entity;
+package com.SpringSecurityJWT.auth.entity;
 
-import com.SpringSecurityJWT.Auth.utils.Role;
+import com.SpringSecurityJWT.auth.utils.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

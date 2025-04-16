@@ -1,4 +1,4 @@
-package com.SpringSecurityJWT.Auth.utils;
+package com.SpringSecurityJWT.auth.utils;
 
 public enum Permission {
 

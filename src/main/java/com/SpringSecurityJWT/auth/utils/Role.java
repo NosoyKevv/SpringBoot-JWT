@@ -1,4 +1,4 @@
-package com.SpringSecurityJWT.Auth.utils;
+package com.SpringSecurityJWT.auth.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
