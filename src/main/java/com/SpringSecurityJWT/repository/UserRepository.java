@@ -1,13 +1,10 @@
 package com.SpringSecurityJWT.repository;
 
-import com.SpringSecurityJWT.models.UserEntity;
+import com.SpringSecurityJWT.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-@Repository
-public interface UserRepository extends JpaRepository<UserEntity, Long> {
-
-    Optional<UserEntity> findByUsername(String username);
+public interface UserRepository extends JpaRepository<User, Long> {
+    Optional<User> findByUsername(String username);
 }
