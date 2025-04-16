@@ -1,9 +1,9 @@
-package com.SpringSecurityJWT.service;
+package com.SpringSecurityJWT.Auth.service;
 
-import com.SpringSecurityJWT.dto.AuthenticationRequest;
-import com.SpringSecurityJWT.dto.AuthenticationResponse;
-import com.SpringSecurityJWT.entity.User;
-import com.SpringSecurityJWT.repository.UserRepository;
+import com.SpringSecurityJWT.Auth.dto.AuthenticationRequest;
+import com.SpringSecurityJWT.Auth.dto.AuthenticationResponse;
+import com.SpringSecurityJWT.Auth.entity.User;
+import com.SpringSecurityJWT.Auth.repository.UserRepository;
 import jakarta.validation.Valid;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

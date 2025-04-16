@@ -1,6 +1,6 @@
-package com.SpringSecurityJWT.repository;
+package com.SpringSecurityJWT.Auth.repository;
 
-import com.SpringSecurityJWT.entity.Product;
+import com.SpringSecurityJWT.Auth.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {

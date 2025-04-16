@@ -1,7 +1,7 @@
-package com.SpringSecurityJWT.config.security;
+package com.SpringSecurityJWT.Auth.config;
 
-import com.SpringSecurityJWT.config.security.filter.JwtAuthenticationFilter;
-import com.SpringSecurityJWT.utils.Permission;
+import com.SpringSecurityJWT.Auth.config.security.filter.JwtAuthenticationFilter;
+import com.SpringSecurityJWT.Auth.utils.Permission;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;

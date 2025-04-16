@@ -3,14 +3,27 @@ POST   localhost:8080/auth/authenticate
 Content-Type: application/json
 
 {
-  "username": "kvergel",
-  "password": "1007912636"
+  "username": "slazaro",
+  "password": "60415654"
 }
 
 ###SAVE-TOKEN
-@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQ1VTVE9NRVIiLCJuYW1lIjoiS2V2aW4gVmVyZ2VsIiwicGVybWlzc2lvbiI6W3siYXV0aG9yaXR5IjoiUkVBRF9BTExfUFJPRFVDVFMifSx7ImF1dGhvcml0eSI6IlJPTEVfQ1VTVE9NRVIifV0sInN1YiI6IktldmluIFZlcmdlbCIsImlhdCI6MTc0NDgxNTU2OCwiZXhwIjoxNzQ0ODE3MzY4fQ.owiUD7VMNlQ9s5ugDEIW99s28HEi8RGj0CL_aLycJO8
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU5JU1RSQVRPUiIsIm5hbWUiOiJTYW50aWFnbyBMw6F6YXJvIiwicGVybWlzc2lvbiI6W3siYXV0aG9yaXR5IjoiU0FWRV9PTkVfUFJPRFVDVCJ9LHsiYXV0aG9yaXR5IjoiUkVBRF9BTExfUFJPRFVDVFMifSx7ImF1dGhvcml0eSI6IlJPTEVfQURNSU5JU1RSQVRPUiJ9XSwic3ViIjoic2xhemFybyIsImlhdCI6MTc0NDgyNTQ3NywiZXhwIjoxNzQ0ODI3Mjc3fQ.h38j2ULBnveBFTqV0s3-anMIdITw7QKNTK20abjmmjY
 
 
 ###AUTH-PUBLIC-ACCESS
 GET localhost:8080/auth/public-access
 
+###PRODUCTS
+GET localhost:8080/products
+Authorization: Bearer {{token}}
+
+###PRODUCT-CREATE
+POST   localhost:8080/products
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "Pepito",
+  "price": "100.0"
+}

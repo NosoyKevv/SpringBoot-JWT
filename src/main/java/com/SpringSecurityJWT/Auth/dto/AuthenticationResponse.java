@@ -1,4 +1,4 @@
-package com.SpringSecurityJWT.dto;
+package com.SpringSecurityJWT.Auth.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

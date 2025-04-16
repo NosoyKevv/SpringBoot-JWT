@@ -1,6 +1,6 @@
-package com.SpringSecurityJWT.repository;
+package com.SpringSecurityJWT.Auth.repository;
 
-import com.SpringSecurityJWT.entity.User;
+import com.SpringSecurityJWT.Auth.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

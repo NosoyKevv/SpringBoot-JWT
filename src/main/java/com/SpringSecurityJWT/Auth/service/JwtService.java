@@ -1,6 +1,6 @@
-package com.SpringSecurityJWT.service;
+package com.SpringSecurityJWT.Auth.service;
 
-import com.SpringSecurityJWT.entity.User;
+import com.SpringSecurityJWT.Auth.entity.User;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;

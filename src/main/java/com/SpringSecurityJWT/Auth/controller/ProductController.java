@@ -1,7 +1,7 @@
-package com.SpringSecurityJWT.controller;
+package com.SpringSecurityJWT.Auth.controller;
 
-import com.SpringSecurityJWT.entity.Product;
-import com.SpringSecurityJWT.repository.ProductRepository;
+import com.SpringSecurityJWT.Auth.entity.Product;
+import com.SpringSecurityJWT.Auth.repository.ProductRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;

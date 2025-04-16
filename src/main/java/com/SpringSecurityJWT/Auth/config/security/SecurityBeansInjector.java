@@ -1,6 +1,6 @@
-package com.SpringSecurityJWT.config.security;
+package com.SpringSecurityJWT.Auth.config.security;
 
-import com.SpringSecurityJWT.repository.UserRepository;
+import com.SpringSecurityJWT.Auth.repository.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
