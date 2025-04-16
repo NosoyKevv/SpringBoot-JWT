@@ -38,7 +38,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             return;
         }
 
-        String jwt = authHeader.substring(7); // Más limpio que split
+        String jwt = authHeader.substring(7);
         String username = jwtService.extractUsername(jwt);
 
         // Solo autenticar si no hay alguien ya autenticado

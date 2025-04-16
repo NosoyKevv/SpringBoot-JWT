@@ -1,7 +1,6 @@
 package com.SpringSecurityJWT.auth.config;
 
 import com.SpringSecurityJWT.auth.config.security.filter.JwtAuthenticationFilter;
-import com.SpringSecurityJWT.auth.utils.Permission;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -35,27 +34,25 @@ public class HttpSecurityConfig {
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class)
-                .authorizeHttpRequests(builderRequestMarchers())
-        ;
+                .authorizeHttpRequests(authConfig -> {
+
+                    // Configurar rutas públicas
+                    authConfig.requestMatchers(HttpMethod.POST, "/auth/authenticate").permitAll();
+                    authConfig.requestMatchers(HttpMethod.GET, "/auth/public-access").permitAll();
+                    authConfig.requestMatchers("/error").permitAll();
+
+                    // Configurar rutas protegidas para productos
+                    authConfig.requestMatchers(HttpMethod.GET, "/products").hasAuthority("READ_ALL_PRODUCTS");
+                    authConfig.requestMatchers(HttpMethod.POST, "/products").hasAuthority("SAVE_ONE_PRODUCT");
+
+                    // Rutas de administración protegidas
+                    authConfig.requestMatchers(HttpMethod.GET, "/admin/**").hasRole("ADMINISTRATOR");
+                    authConfig.requestMatchers(HttpMethod.POST, "/admin/**").hasRole("ADMINISTRATOR");
+
+                    // Denegar todas las rutas no especificadas
+                    authConfig.anyRequest().denyAll();
+                });
 
         return http.build();
-    }
-
-    private static Customizer<AuthorizeHttpRequestsConfigurer<HttpSecurity>.AuthorizationManagerRequestMatcherRegistry> builderRequestMarchers() {
-        return authConfig -> {
-
-            //PUBLICAS
-            authConfig.requestMatchers(HttpMethod.POST, ("/auth/authenticate")).permitAll();
-            authConfig.requestMatchers(HttpMethod.GET, ("/auth/public-access")).permitAll();
-            authConfig.requestMatchers("/error").permitAll();
-
-            //PRIVADAS
-            authConfig.requestMatchers(HttpMethod.GET, "/products").hasAuthority(Permission.READ_ALL_PRODUCTS.name());
-            authConfig.requestMatchers(HttpMethod.POST, "/products").hasAuthority(Permission.SAVE_ONE_PRODUCT.name());
-
-            //DENEGADO si no esta mapeado arriba no permita ninguno.
-            authConfig.anyRequest().denyAll();
-
-        };
     }
 }

@@ -1,6 +1,5 @@
 package com.SpringSecurityJWT.auth.entity;
 
-import com.SpringSecurityJWT.auth.utils.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,11 +14,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
+@Table(name = "users")
 @Getter
 @Setter
-@Table(name = "users")
+@NoArgsConstructor
+@AllArgsConstructor
 public class User implements UserDetails {
 
     @Id
@@ -27,25 +26,24 @@ public class User implements UserDetails {
     private Long id;
 
     private String username;
-
     private String name;
-
     private String password;
 
-    @Enumerated(EnumType.STRING)
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "role_id")
     private Role role;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-
         List<GrantedAuthority> authorities = role.getPermissions()
                 .stream()
-                .map(permissionEnum -> new SimpleGrantedAuthority(permissionEnum.name()))
+                .map(p -> new SimpleGrantedAuthority(p.getName()))
                 .collect(Collectors.toList());
 
-        authorities.add(new SimpleGrantedAuthority("ROLE_" + role.name()));
+        authorities.add(new SimpleGrantedAuthority("ROLE_" + role.getName()));
         return authorities;
     }
+
 
     @Override
     public boolean isAccountNonExpired() {
