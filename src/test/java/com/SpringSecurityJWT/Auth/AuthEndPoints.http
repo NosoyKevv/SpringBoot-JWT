@@ -1,0 +1,16 @@
+###AUTHENTICATE
+POST   localhost:8080/auth/authenticate
+Content-Type: application/json
+
+{
+  "username": "kvergel",
+  "password": "1007912636"
+}
+
+###SAVE-TOKEN
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQ1VTVE9NRVIiLCJuYW1lIjoiS2V2aW4gVmVyZ2VsIiwicGVybWlzc2lvbiI6W3siYXV0aG9yaXR5IjoiUkVBRF9BTExfUFJPRFVDVFMifSx7ImF1dGhvcml0eSI6IlJPTEVfQ1VTVE9NRVIifV0sInN1YiI6IktldmluIFZlcmdlbCIsImlhdCI6MTc0NDgxNTU2OCwiZXhwIjoxNzQ0ODE3MzY4fQ.owiUD7VMNlQ9s5ugDEIW99s28HEi8RGj0CL_aLycJO8
+
+
+###AUTH-PUBLIC-ACCESS
+GET localhost:8080/auth/public-access
+
