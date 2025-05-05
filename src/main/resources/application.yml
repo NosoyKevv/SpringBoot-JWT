@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/inventory_minicourse?currentSchema=springbootsecurity
+    username: postgres
+    password: 12345
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+jwt:
+  secret: uRUGdi2MPmgZHjrEPx3AvtAhpvJwmAY3Ev6ukLI4Rte
+  expiration: 3600000 # 1 hora en milisegundos
+  refresh-expiration: 604800000 # 7 días en milisegundos

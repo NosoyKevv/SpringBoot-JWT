@@ -1,0 +1,20 @@
+### Login
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "password"
+}
+
+### Refresh Token
+POST http://localhost:8080/api/auth/refresh
+Content-Type: application/json
+
+{
+  "refreshToken": "<PUT_YOUR_REFRESH_TOKEN_HERE>"
+}
+
+### Access Private Endpoint
+GET http://localhost:8080/api/private/user
+Authorizatio
