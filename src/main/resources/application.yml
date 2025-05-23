@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: SpringSecurityJWT
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/inventory_minicourse?currentSchema=springbootsecurity
+    username: postgres
+    password: 12345
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+# JWT custom configuration
+security:
+  jwt:
+    # expiration-minutes: 30
+    # permissions: permissions
+    # Base64 encoded secret key
+    secret-key: a2V2aW5zYW50aWFnb3ZlcmdlbGxhemFybzEwMDc5MTI2MzZrMjM=
